@@ -1,0 +1,41 @@
+
+$primary: #1F524B;
+$primary-lit:#1A6C40;
+$primary-liter:#F8F8FA;
+$secondary:#1F524B; 
+$secondary-lit:#1f524bc2;
+$accent-clr:#A38C2A;
+$title-clr:#2E2E2D;
+$txt-clr:#2E2E2D;
+$pm-font:'segeoui', serif;
+$text-muted:#e5e5e5;
+$bg-pm-lit:$primary-liter 0% 0% no-repeat padding-box;
+$bg-lit: #F8F8FA;
+$pm-lite: #eaebf2;
+$sec-lite:#fff7cd;
+$hash-text: #64645E;
+$lit-border-color: #d9d9d9;
+
+$pm-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+$pm-transition: 200ms all linear;
+$pm-img: invert(13%) sepia(85%) saturate(2567%) hue-rotate(293deg) brightness(101%) contrast(109%);
+$sec-img:invert(55%) sepia(19%) saturate(641%) hue-rotate(238deg) brightness(91%) contrast(88%);;
+$darkBlue: hsl(233, 26%, 24%);
+$limeGreen: hsl(136, 65%, 51%);
+$brightCyan: hsl(192, 70%, 51%);
+$grayishBlue: hsl(233, 8%, 62%);
+$lightGrayishBlue: hsl(220, 16%, 96%);
+$veryLightGray: hsl(0, 0%, 98%);
+$white: hsl(0, 0%, 100%);
+
+// Font Sizes
+$font-mob:0.9rem;
+$font-xs:1.25rem; //20px
+$font-sm:1.375rem; // 22px
+$font-med:1.625rem; // 26px
+$font-lg:2.875rem; //46px
+$font-xlg:3.875rem; //62px
+
+//transition
+$ts-opacity: opacity 300ms ease-in-out;
+$ts-all: all 300ms ease-in-out;

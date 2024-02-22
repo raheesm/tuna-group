@@ -1,0 +1,39 @@
+.home-abt{
+    overflow: hidden;
+    .img-box{
+       img{
+        width: 100%;
+        height: 100%;
+        display: flex;
+       }
+       @include breakpoint-up(large){
+        flex: 1;
+       }
+    }
+    .content-box{
+        background-color: $primary-lit;
+        color: white;
+        min-height: 70dvh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding:0 2em 0 2em;
+        h2{
+            text-transform: uppercase;
+            font-size: 2rem;
+        }
+        p{
+            font-weight: normal;
+            font-size: 1.125rem;
+        }
+        @include breakpoint-up(large){
+            flex: 1;
+        }
+    }
+    &__div{
+        @include breakpoint-up(large){
+            display: flex;
+            flex: 1 1 100%;
+        }
+    }
+}

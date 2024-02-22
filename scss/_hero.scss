@@ -1,0 +1,232 @@
+/* Add these styles to your Sass file */
+
+.hero{
+  min-height: 100dvh;
+  height: max-content;
+  background:linear-gradient(to top right,rgba(0, 128, 0, 0),rgba(0, 128, 0, 0.349));
+  padding-bottom: 3em;
+  position: relative;
+  overflow: hidden;
+
+  @include breakpoint-up(large){
+    height: 120dvh;
+  }
+  .splide{
+    position: relative;
+    @include breakpoint-up(large){
+    
+    }
+    &__track{
+      max-width: 90%;
+      margin: 0 auto;
+      padding-top: 25vw;
+      overflow: visible;
+      @include breakpoint-up(large){
+        max-width: unset;
+        padding-top: 5vw;
+        height: 100%;
+      }
+    }
+    &__list{
+      height: 100%;
+    }
+    &__pagination{
+     
+        @include breakpoint-up(large){
+          position: absolute;
+          content: "";
+          top: 60%;
+          left: 5%;
+          width: fit-content;
+          height: fit-content;
+          margin-left: 0;
+        }
+    
+    &__page{
+      background-color: white;
+      border: 1px solid $primary;
+      position: relative;
+      padding: 5px;
+      &::before{
+        position: absolute;
+        content:"";
+        inset: 50% 0 0 50%;
+        transform: translate(-50%,-50%);
+        width: 8px;
+        height: 8px;
+        background-color: white;
+        border-radius: 50%;
+      }
+    }
+    .is-active{
+      transform: scale(1);
+      &::before{
+        background-color: $primary;
+      }
+    }
+    }
+  }
+  &__slide{
+
+    height: 100%;
+    @include breakpoint-up(large){
+     display: flex;
+     justify-content: space-between;
+     align-items: start;
+     padding-top: 10vw;
+    }
+    &__img{
+      position: relative;
+      @include breakpoint-up(large){
+        order: 2;
+        position: absolute;
+        top: 0%;
+        right: -15%;
+      }
+      img{
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        transition: 300ms transform linear;
+        margin: 0 auto;
+        display: flex;
+        @include breakpoint-up(medium){
+         width: 20em;
+         height: 20em;
+        }
+        @include breakpoint-up(large){
+         width: 30em;
+         height: 30em;
+        }
+       
+      }
+      &:before{
+        position: absolute;
+        content:"";
+        top: -5%;
+        left: -15%;
+        background-image: url(../images/leaf.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 70%;
+        height: 70%;
+        z-index: -1;
+        transform: rotate(-10deg);
+        transition: $pm-transition;
+      }
+      &::after{
+        position: absolute;
+        content:"";
+        bottom: -5%;
+        right: -10%;
+        background-image: url(../images/tomatos.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 50%;
+        height: 50%;
+        z-index: -1;
+        transition: $pm-transition;
+        @include breakpoint-up(large){
+          right: unset;
+          left: -15%;
+          bottom: -20%;
+        }
+      }
+      &:hover{
+        img{
+          transform: translateX(-10%);
+        }
+        &::before{
+          left: -10%;
+        }
+        &::after{
+          left: -5%;
+        }
+      }
+    }
+    &__content{
+      background: transparent radial-gradient(closest-side at 50% 50%, #1a6c4034 0%, 
+      #FEEFEB00 100%) 0% 0% no-repeat padding-box;
+      
+      @include breakpoint-up(large){
+        padding-left: 3em;
+      }
+      h2{
+        font-size: $font-med;
+        color: $title-clr;
+        font-weight: bold;
+        letter-spacing: 0;
+        @include breakpoint-up(large){
+          // font-size: 62px;
+          font-size: $font-lg;
+          max-width: 27ch;
+          // text-wrap: balance;
+
+        }
+      }
+      p{
+        font-size: $font-mob;
+        font-weight: normal;
+        line-height: 1.5;
+        @include breakpoint-up(large){
+          max-width: 50ch;
+        }
+      }
+    }
+  }
+  .app-icons{
+    max-width: 90%;
+    margin: 0 auto;
+    @include breakpoint-up(medium){
+      position: absolute;
+    bottom: 20%;
+    left: 5%;
+    }
+  }
+}
+
+ 
+.animate-slide {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.animate-slide.slide-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-slide-right {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.animate-slide-right.slide-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animate-slide-left {
+  opacity: 0;
+  filter:blur(20px);
+  transform: translateX(50px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.animate-slide-left.slide-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  filter: blur(0);
+}
+.animate-slide-rotate {
+  opacity: 0;
+  transform: rotate(0deg);
+  transition: opacity 1s ease, transform 2s ease;
+}
+
+.animate-slide-rotate.slide-enter-active {
+  opacity: 1;
+  transform: rotate(360deg);
+}
